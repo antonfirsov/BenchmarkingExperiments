@@ -288,3 +288,4 @@ __pycache__/
 *.xsd.cs
 BenchmarkRunner/BenchmarkDotNet.Artifacts/*
 BenchmarkRunner/BenchmarkDotNet.Artifacts/results/*
+BenchmarkRunner/BenchmarkDotNet.Artifacts/**
