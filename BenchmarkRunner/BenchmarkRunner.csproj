@@ -9,6 +9,8 @@
 
   <ItemGroup>
     <PackageReference Include="BenchmarkDotNet" Version="0.10.6" />
+    <PackageReference Include="System.Numerics.Vectors" Version="4.4.0-preview1-25305-02" />
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.4.0-preview1-25305-02" />
   </ItemGroup>
 
   <ItemGroup>
