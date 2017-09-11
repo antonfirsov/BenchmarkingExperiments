@@ -11,7 +11,7 @@ namespace BenchmarkRunner
         {
             var coreJob = Job.Dry.With(Runtime.Core).WithId("Dry.Core");
             var clrJob = Job.Dry.With(Runtime.Clr).WithId("Dry.Clr");
-
+            
             this.Add(coreJob);
             this.Add(clrJob);
             this.Add(MemoryDiagnoser.Default);

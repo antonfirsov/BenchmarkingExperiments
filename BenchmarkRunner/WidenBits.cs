@@ -6,7 +6,7 @@
 
     using BenchmarkDotNet.Attributes;
     using BenchmarkDotNet.Attributes.Jobs;
-    
+
     [ClrJob]
     [CoreJob]
     public class WidenBits

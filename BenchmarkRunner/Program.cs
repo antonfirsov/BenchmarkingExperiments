@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 
 namespace BenchmarkRunner
 {
@@ -10,6 +11,7 @@ namespace BenchmarkRunner
     {
         static void Main(string[] args)
         {
+            Console.WriteLine($"H:{Vector.IsHardwareAccelerated} Vector<float>.Count:{Vector<float>.Count}");
             Console.WriteLine("Runner process framework:");
             Console.WriteLine(System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription);
 
