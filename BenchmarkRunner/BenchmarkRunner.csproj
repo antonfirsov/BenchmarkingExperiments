@@ -8,10 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BenchmarkDotNet" Version="0.10.6" />
+    <PackageReference Include="BenchmarkDotNet" Version="0.10.9" />
     <PackageReference Include="CoreCompat.System.Drawing" Version="1.0.0-beta006" Condition="'$(TargetFramework)' != 'net461'" />
-    <PackageReference Include="System.Numerics.Vectors" Version="4.4.0-preview1-25305-02" />
-    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.4.0-preview1-25305-02" />
+    <PackageReference Include="System.Numerics.Vectors" Version="4.4.0" />
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.4.0" />
     <PackageReference Include="System.Runtime.InteropServices.RuntimeInformation" Version="4.3.0" />
   </ItemGroup>
 
