@@ -6,6 +6,8 @@
     <RuntimeIdentifier>win7-x64</RuntimeIdentifier>
     <Prefer32Bit>false</Prefer32Bit>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net461|AnyCPU'">
@@ -17,11 +19,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BenchmarkDotNet" Version="0.10.9" />
+    <PackageReference Include="BenchmarkDotNet" Version="0.10.9.311" />
+    <PackageReference Include="BenchmarkDotNet.Core" Version="0.10.9.311" />
     <PackageReference Include="CoreCompat.System.Drawing" Version="1.0.0-beta006" Condition="'$(TargetFramework)' != 'net461'" />
     <PackageReference Include="System.Numerics.Vectors" Version="4.4.0" />
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.4.0" />
     <PackageReference Include="System.Runtime.InteropServices.RuntimeInformation" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net461'">
+    <PackageReference Include="BenchmarkDotNet.Disassembler.x64">
+      <Version>1.0.0</Version>
+    </PackageReference>
   </ItemGroup>
 
 </Project>

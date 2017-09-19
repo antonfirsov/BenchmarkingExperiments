@@ -7,7 +7,7 @@ using BenchmarkDotNet.Attributes.Jobs;
 
 namespace BenchmarkRunner
 {
-    [CoreJob]
+    //[DisassemblyDiagnoser(printAsm: true)]
     public class FetchVectors
     {
         private float[] _heapData;
@@ -118,6 +118,27 @@ namespace BenchmarkRunner
             heapRef = v;
             return _heapData[8];
         }
+
+        [Benchmark]
+        public unsafe float FetchAcrossVector4Pair_UsePointers()
+        {
+            Vector4Pair stackData = default(Vector4Pair);
+            Vector4Pair* stackPtr = &stackData;
+            void* heapPtr = (void*)_heapPtr;
+
+            Vector<float> v = Unsafe.Read<Vector<float>>(heapPtr);
+
+            v *= new Vector<float>(666);
+            v += new Vector<float>(555);
+
+            Unsafe.Write(stackPtr, v);
+            stackData.B.W = stackData.A.X; // make sure we do something with the data
+            v = Unsafe.Read<Vector<float>>(stackPtr); ;
+            v *= new Vector<float>(555);
+            Unsafe.Write(heapPtr, v);
+            return _heapData[8];
+        }
+
 
         [Benchmark]
         public float Vector4Only()
